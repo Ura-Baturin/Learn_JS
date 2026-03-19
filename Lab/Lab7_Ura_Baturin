@@ -1,0 +1,68 @@
+// Лабораторна робота №7
+// Тема: Фільтрація, трансформація та агрегація даних
+
+// =============================
+// Задача 1. Фільтрація
+// =============================
+const names = ["Київ", "Тернопіль", "Львів", "Івано-Франківськ", "Одеса"];
+
+const longNames = names.filter(name => name.length > 5);
+
+console.log("Задача 1:");
+console.log(longNames);
+// ["Тернопіль", "Івано-Франківськ"]
+
+
+// =============================
+// Задача 2. Трансформація
+// =============================
+const pricesUAH = [100, 250, 500, 1200];
+
+const pricesUSD = pricesUAH.map(price => price / 40);
+
+console.log("\nЗадача 2:");
+console.log(pricesUSD);
+// [2.5, 6.25, 12.5, 30]
+
+
+// =============================
+// Задача 3. Агрегація
+// =============================
+const scores = [10, 0, 15, 20, 5];
+
+const total = scores.reduce((sum, score) => sum + score, 0);
+const average = total / scores.length;
+
+console.log("\nЗадача 3:");
+console.log("Сума:", total);      // 50
+console.log("Середнє:", average); // 10
+
+
+// =============================
+// Задача 4. Комбінування
+// =============================
+const numbers = [2, -5, 10, -3, 8, 15, 0];
+
+const result = numbers
+  .filter(num => num > 0)
+  .map(num => num ** 2);
+
+console.log("\nЗадача 4:");
+console.log(result);
+// [4, 100, 64, 225]
+
+
+// =============================
+// Задача 5. Пошук
+// =============================
+const words = ["Привіт", "Світ", "Заборонено", "Код"];
+
+// чи є слово "заборонено"
+const hasForbidden = words.some(word => word.toLowerCase() === "заборонено");
+
+// чи всі слова з великої літери
+const allCapitalized = words.every(word => word[0] === word[0].toUpperCase());
+
+console.log("\nЗадача 5:");
+console.log("Є 'заборонено':", hasForbidden); 
+console.log("Всі з великої літери:", allCapitalized);
